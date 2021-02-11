@@ -52,7 +52,7 @@ class  TodoList extends Component{
                     return  (
                       <li key={id}><input type="checkbox"/>
                       {item}
-                      <span onClick={()=> this.onDelete(id)} className="delete">X</span>
+                      {/* <span onClick={()=> this.onDelete(id)} className="delete">X</span> */}
                       </li> 
                     )
                      
