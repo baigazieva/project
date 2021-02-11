@@ -52,6 +52,7 @@ class  TodoList extends Component{
                     return  (
                       <li key={id}><input type="checkbox"/>
                       {item}
+                      {/* uncommented comment just for the ref */}
                       <span onClick={()=> this.onDelete(id)} className="delete">X</span>
                       </li> 
                     )
