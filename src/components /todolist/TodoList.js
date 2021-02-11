@@ -8,20 +8,17 @@ class  TodoList extends Component{
       super()
       this.state={
         input: '',
-        //  todolist: [],
           todo: []
       }
     }
 
     onKeyUp =(e)=>{
-      // const {value:input} = e.target
       this.setState({input: e.target.value})
       
       
     }
 
     onClick =()=>{
-      // const {todo,input} = this.state
       const newTodo = [...this.state.todo]
       newTodo.push(this.state.input)
       this.setState({todo:newTodo})
@@ -35,7 +32,6 @@ class  TodoList extends Component{
 
     render(){
         const {todo, input } = this.state
-      // const {listsItem} = this.state
       return(
         <div className="container">
           <h3>To do List</h3>
@@ -57,10 +53,6 @@ class  TodoList extends Component{
                   })
 
                   }
-                
-               
-                {/* <li><input type="checkbox"/>do laundry <span className="delete">X</span></li>
-                <li><input type="checkbox"/>pick up package <span className="delete">X</span></li> */}
               </ul>
               <div className="clear" onClick={this.clear}>Clear</div>
             </div>
