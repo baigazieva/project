@@ -8,7 +8,8 @@ class  TodoList extends Component{
       super()
       this.state={
         input: '',
-          todo: []
+          todo: [],
+          doneTodo: []
       }
     }
 
@@ -23,15 +24,20 @@ class  TodoList extends Component{
       newTodo.push(this.state.input)
       this.setState({todo:newTodo})
       this.setState({input: ''})
-       console.log('aidai',this.state.todo)
+    }
 
+    onDelete =(id) =>{
+      const {todo} = this.state
+      if(id >= 1){
+  todo.slice(id,1)
+     this.setState({todo})
+      }
     }
-    clear = () => {
-      this.setState({todo:[]})
-    }
+    
 
     render(){
-        const {todo, input } = this.state
+
+        const {todo, input,doneTodo } = this.state
       return(
         <div className="container">
           <h3>To do List</h3>
@@ -46,7 +52,7 @@ class  TodoList extends Component{
                     return  (
                       <li key={id}><input type="checkbox"/>
                       {item}
-                      <span className="delete">X</span>
+                      <span onClick={()=> this.onDelete(id)} className="delete">X</span>
                       </li> 
                     )
                      
@@ -54,7 +60,7 @@ class  TodoList extends Component{
 
                   }
               </ul>
-              <div className="clear" onClick={this.clear}>Clear</div>
+              <div className="clear" >Clear</div>
             </div>
             
         </div>
