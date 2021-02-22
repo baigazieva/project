@@ -60,7 +60,6 @@ class  TodoList extends Component{
     render(){
           // pass data will mk cp
         const {todo, input,doneTodo } = this.state
-        console.log("just trash")
        
        
       return(
